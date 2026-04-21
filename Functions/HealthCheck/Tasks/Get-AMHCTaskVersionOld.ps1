@@ -20,7 +20,7 @@ function Get-AMHCTaskVersionOld {
         try {
             $xml = [xml]$task.AML
         } catch {
-            # Old Task Version health check will report this
+            # Get-AMHCTaskAmlNotXml health check will report this, so skip it.
             continue
         }
         $taskConnection = Get-AMConnection -Connection $task.ConnectionAlias
